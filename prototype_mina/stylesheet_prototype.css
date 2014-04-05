@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	background-color:rgb(227,225,225);
+	position:relative;
+	display:block;
+	width:100%;
+	padding:0px;
+	margin:0px;
+}
+#nav{
+	display:block;
+	height:55px;
+	width:100%;
+	position:fixed;
+	z-index:1;
+	background-color:rgb(197,96,54);
+}
+#main_nav li{
+	list-style:none;
+	position:relative;
+	display:inline-block;
+	left:64px;
+	top:14px;
+}
+a{
+	color:rgb(214,212,212);
+	height:50px;
+	padding:10px;
+	border-radius:5px;
+	background-color:rgba(255,255,255,.2);
+	font-family:Helvetica, sans-serif;
+	text-decoration:none;
+	font-size:14px;
+	
+}
+a:hover{
+    background-color:rgba(255,255,255,.3);
+}
+.active{
+	background-color: rgb(208,208,208);
+	color: rgb(158,157,157);
+}
+.active:hover{
+	background-color: rgb(208,208,208);
+}
+
+#drop_down_img{
+	top:55px;
+	left:104px;
+	display:block;
+	position:fixed;
+	height:70px;
+	width:100%;
+	z-index:1;
+
+}
+#logo{
+	position:absolute;
+	z-index:1;
+	top:10px;
+	left:30px;
+}
+#drop_down_text{
+	font-family:Helvetica, sans-serif;
+	font-size:14px;
+	position:fixed;
+	color:rgb(158,157,157);
+	left:120px;
+	top:70px;
+	z-index:1;
+}
+#side_nav{
+	background-repeat:repeat-y;
+	width:100%;
+	position:fixed;
+	display:block;
+	left:-1px;
+	top:55px;
+	z-index:1;
+}
+
