@@ -1,6 +1,12 @@
 @charset "UTF-8";
 /* CSS Document */
 
+iframe{
+	height: 600px;
+	width: 100%;
+	margin-top: 50px;
+}
+
 body{
 	background-color:rgb(227,225,225);
 	position:relative;

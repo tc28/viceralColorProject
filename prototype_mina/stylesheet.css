@@ -1,8 +1,3 @@
-@font-face {
-font-family: "roboto";
-src:url("Roboto-Light.ttf");
-}
-
 #wrapper{
 	width: 500px;
 	background-image: url("back.png");
@@ -12,11 +7,18 @@ src:url("Roboto-Light.ttf");
 	overflow-y: auto;
 }
 
+#buttons{
+	top: 20px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	display: inline-block;
+}
+
 #add, #done{
+	display: inline-block;
 	position: relative;
 	width: 200px;
-	padding-top: 10px;
-	height: 30px;
+	height: 50px;
 	background-color: white;
 }
 
@@ -26,19 +28,9 @@ a{
 	outline: none;
 }
 
-#add{
-	top: 20px;
-	margin-bottom: 40px;
-}
-
-#done{
-	bottom: 20px;
-	margin-top:  40px;
-}
-
 div{
 	text-transform: uppercase;
-	font-family: "roboto";
+	font-family: helvetica, sans-serif;
 	text-align: center;
 	margin: auto;
 }
