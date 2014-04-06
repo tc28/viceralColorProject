@@ -1,7 +1,7 @@
 var prev_li = $("#first");
 
 $(document).ready(function() {
-
+	console.log("hi");
 	$("#add").click( function() {
 		var li = document.createElement('li');
 		var ul = document.getElementById("sets");
@@ -11,22 +11,16 @@ $(document).ready(function() {
 	});
 
 	$("#add").mousedown( function() {
-		$(this).attr("src","set_button_click.jpg");
+		$(this).css("color","black");
 	});
 	$("#add").mouseup( function() {
-		$(this).attr("src","set_button.jpg");
+		$(this).css("css","white");
 	});
 
 	$("#add").hover( function() {
-		$(this).attr("src","set_button_hover.jpg");
+		$(this).css("color","white");
 	}, function() {
-		$(this).attr("src","set_button.jpg");
-	});
-
-	$("#done").hover( function() {
-		$(this).attr("src","done_button_hover.jpg");
-	}, function() {
-		$(this).attr("src","done_button.jpg");
+		$(this).css("color","lightgray");
 	});
 
 });
