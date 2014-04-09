@@ -1,0 +1,2 @@
+drop table if exists photo;
+create table photo (id integer primary key, data blob, color int);
