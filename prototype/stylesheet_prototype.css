@@ -115,47 +115,22 @@ body{
 	margin-right:auto;
 
 }
-
-$nav-backgroundcolor: #0FF;
-$nav-fontcolor: #9F6;
-
 #iphone_nav{
 	font-family:Helvetica, sans-serif;
 	font-size:16px;
 	position:relative;
-	color: #9F6;
+	color:#9F6;
 	display:block;
 	margin-right:auto;
 	margin-left:auto;
-	background-color:black;
+	background-color:#0FF;
 }
-
 #web_app_background{
 	position:relative;
-	top:-15px;
+	top:65px;
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
-<<<<<<< HEAD
-}
-#fake_website{
-	position:relative;
-	top:181px;
-	width:580px;
-	margin-left:auto;
-	margin-right:auto;
-	background-color:#FCC;
-	height:70px;
-}
-#web_nav{
-	font-family:Helvetica, sans-serif;
-	font-size:20px;
-	color:#F99;
-	text-align:left;
-	padding-top:30px;
-	padding-left:5px;
-}
-=======
 
 }
 
@@ -165,7 +140,7 @@ $nav-fontcolor: #9F6;
 	width: 800px;
 	height: 500px;
 	text-align: center;
-	margin: 150px auto 0 auto;
+	margin: 150px auto 100px auto;
 	background-color: darkgray;
 	padding: 10px;
 	overflow-y: auto;
@@ -238,5 +213,42 @@ $nav-fontcolor: #9F6;
 	height: 90px;
 }
 
+$nav-backgroundcolor: #0FF;
+$nav-fontcolor: #9F6;
+
+#iphone_nav{
+	font-family:Helvetica, sans-serif;
+	font-size:16px;
+	position:relative;
+	color: #9F6;
+	display:block;
+	margin-right:auto;
+	margin-left:auto;
+	background-color:black;
+}
+
+#web_app_background{
+	position:relative;
+	top:-15px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+#fake_website{
+	position:relative;
+	top:181px;
+	width:580px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#FCC;
+	height:70px;
+}
+#web_nav{
+	font-family:Helvetica, sans-serif;
+	font-size:20px;
+	color:#F99;
+	text-align:left;
+	padding-top:30px;
+	padding-left:5px;
+}
 /*End Upload Code */
->>>>>>> FETCH_HEAD
