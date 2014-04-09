@@ -1,3 +1,4 @@
 scheme is an sql file. it creates a table to store the information of a photo
 to run create.sql
-run in the terminal: sqlite3 vcp.db < schema
+run in the terminal: 
+sqlite3 vcp.db < schema
