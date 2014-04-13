@@ -11,4 +11,4 @@ create table photo (photo_id integer primary key, photo_location varchar);
 -- photo_location represents 
 
 create table set_relation (photo_id integer, set_id integer, foreign key(photo_id) references photo(photo_id), foreign key(set_id) references photo_set(set_id), primary key (photo_id, set_id));
--- representing a contain relation within the photo
+
