@@ -9,9 +9,10 @@
 #web_app_background{
 	position:relative;
 	top:-140px;
-	display:block;;
+	display:block;
 	z-index:-1;
-	left:167px;
+	margin-left:auto;
+	margin-right:auto;
 }
 #chosenColors_web{
 	margin: auto;
@@ -26,9 +27,11 @@
 	position:relative;
 	top:53px;
 	width:577px;
-	left:377px;
+	margin-left:auto;
+	margin-right:auto;
 	background-color:rgb(109, 157, 184);
 	height:70px;
+	z-index:-4;
 }
 #web_top{
 	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -130,4 +133,26 @@
 }
 #inner_web{
 	overflow-y:scroll;
+}
+
+#setImages img{
+	height: 90px;
+	max-width: 150px;
+	position: relative;
+	margin-right: 5px;
+	
+}
+
+#setImages{
+	background-color: darkgray;
+	display:inline;
+	height: 405px;
+	width: 190px;
+	left:-10px;
+	position: absolute;
+	top: 30px;
+	padding: 10px;
+	overflow-y: auto;
+	z-index:-2;
+	overflow-y:auto;
 }

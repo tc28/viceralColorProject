@@ -6,6 +6,7 @@
 	top:120px;
 	left: 200px;
 	width: 1000px;
+	z-index:-1;
 }
 
 #mobile_app_background{
@@ -21,7 +22,7 @@
 	width: 228px;
 	height: 400px;
 	top: 95px;
-	background-color: black;
+	background-color: rgb(147, 171, 138);
 }
 
 #top{
@@ -55,6 +56,22 @@
 	top: 10px;
 }
 
+#setImages img{
+	height: 60px;
+	max-width: 100px;
+	position: relative;
+	margin-right: 5px;
+}
+
+#setImages{
+	background-color: darkgray;
+	height: 500px;
+	width: 330px;
+	position: absolute;
+	top: 30px;
+	padding: 10px;
+	overflow-y: auto;
+}
 #navButton #a{
 	top: 8px;
 }
@@ -91,7 +108,7 @@
 	float: right;
 	right: 10px;
 	top: 70px;
-	color: rgb(147, 171, 138);
+	color: rgb(0,0,0);
 	font-size: 8pt;
 	font-family: helvetica;
 }
@@ -99,12 +116,13 @@
 #commentBlocks{
 	width: 180px;
 	height: 200px;
-	left: 25px;
+	left: 12px;
 	position: relative;
 	top: 170px;
 	font-size: 12px;
 	font-family: helvetica;
-	color: rgb(147, 171, 138);
+	color: rgb(0,0,0);
+	
 }
 
 .comment{
@@ -137,20 +155,13 @@
 	top: 170px;
 }
 
-#left{
-	left: 10px;
-}
 
-#right{
-	right: 10px;
-}
-
-#commentBlocks #a, #commentBlocks #c, #commentBlocks #e{
+#commentBlocks #a, #commentBlocks #c, #commentBlocks #e, #commentBlocks #b,#commentBlocks #d{
 	position: absolute;
 	top: 0px;
 	height: 40px;
-	width: 180px;
-	background-color: rgb(197, 96, 54); 
+	width: 200px;
+	border: solid 1px rgb(109, 157, 184);
 }
 
 #commentBlocks #c{
@@ -160,8 +171,12 @@
 #commentBlocks #e{
 	top: 160px;
 }
-
-
+#commentBlocks #d{
+	top: 40px;
+}
+#commentBlocks #b{
+	top: 120px;
+}
 
 
 #chosenColors{
