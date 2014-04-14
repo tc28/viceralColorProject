@@ -12,6 +12,11 @@ var engines = require('consolidate');
 app.engine('html', engines.hogan); //tell Express to run .html files through Hogan
 app.set('views', __dirname + '/prototype'); //tell Express where to find templates
 
+app.get('/website_page.html', function(request, response) {
+	//this is the function that is called when the user calls website_page.html
+	response.render('website_page.html', '');
+});
+
 
 //I was wondering which methods that I should interact with the client
 app.get('/imageselection.html', function(request, response) {
