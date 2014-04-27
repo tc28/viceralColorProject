@@ -120,15 +120,6 @@ body{
 	color:#666;
 }
 
-#web_app_background{
-	position:relative;
-	top:120px;
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
-
-}
-
 /*Website and Mobile shared code*/
 
 #setColors{
