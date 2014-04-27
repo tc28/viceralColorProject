@@ -2,7 +2,7 @@
 
 #web_prototype{
 	position:relative;
-	top:120px;
+	top:-150px;
 	left: 140px;
 	width: 1000px;
 }
@@ -10,19 +10,20 @@
 	position:relative;
 	top:-140px;
 	display:block;
-	z-index:-1;
 	margin-left:auto;
 	margin-right:auto;
+	z-index: 1;
 }
 #chosenColors_web{
-	margin: auto;
-	top: -30px;
-	left: 80px;
+	left: 390px;
+	top: 120px;
 	width: 500px; 
 	height: 500px; 
 	position: relative; 
 	border-radius: 500px;
+	z-index: -2;
 }
+
 #fake_website_top{
 	position:relative;
 	top:53px;
@@ -31,7 +32,6 @@
 	margin-right:auto;
 	background-color:rgb(109, 157, 184);
 	height:70px;
-	z-index:-4;
 }
 #web_top{
 	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -54,7 +54,6 @@
 	list-style:none;
 	position:relative;
 	display:inline-block;
-	top:-3px;
 	left:-30px;
 	padding:8px;
 }
@@ -97,7 +96,6 @@
 	position:relative;
 	background-color:rgb(147, 171, 138);
 	top:40px;
-	z-index:-3;
 }
 #fake_web_text{
 	position:relative;
@@ -153,6 +151,31 @@
 	top: 30px;
 	padding: 10px;
 	overflow-y: auto;
-	z-index:-2;
 	overflow-y:auto;
+}
+
+#expand{
+	height: 405px;
+	width: 190px;
+	left:-10px;
+}
+
+/*Color Wheel */
+
+#container2{
+	-ms-transform:rotate(0deg);
+	-webkit-transform:rotate(0deg);
+	transform: rotate(0deg); 
+}
+
+#container3{
+	-ms-transform:rotate(-45deg);
+	-webkit-transform:rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+#container4{
+	-ms-transform:rotate(-90deg);
+	-webkit-transform:rotate(-90deg);
+	transform: rotate(-90deg);
 }

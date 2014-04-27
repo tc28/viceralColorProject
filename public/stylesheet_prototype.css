@@ -12,6 +12,7 @@ body{
 	height:55px;
 	width:100%;
 	background-color:rgb(197,96,54);
+	z-index: 2;
 }
 
 #main_nav li{
@@ -49,6 +50,7 @@ body{
 	position: fixed;
 	top:55px;
 	width: 100%;
+	z-index: 2;
 }
 
 #drop_down_img{
@@ -198,9 +200,6 @@ body{
 
 #container1{
 	clip: rect(0px, 500px, 500px, 250px);
-	-ms-transform:rotate(0);
-	-webkit-transform:rotate(0);
-	transform: rotate(0);
 }
 
 #container2{
@@ -209,16 +208,10 @@ body{
 
 #container3{
 	clip: rect(0px, 500px, 500px, 250px); 
-	-ms-transform:rotate(90deg);
-	-webkit-transform:rotate(90deg);
-	transform: rotate(90deg);
 }
 
 #container4{
 	clip: rect(0px, 500px, 500px, 250px); 
-	-ms-transform:rotate(135deg);
-	-webkit-transform:rotate(135deg);
-	transform: rotate(135deg);
 }
 
 #slice1{

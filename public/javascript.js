@@ -1,7 +1,6 @@
 
 $(document).ready(function() {
 
-	var prev_li = document.getElementById("first");
 	var setCounter = 1;
 
 	$("#drop_down_img").slideDown("slow",function(){
@@ -13,8 +12,7 @@ $(document).ready(function() {
 		var li = document.createElement('li');
 		var ul = document.getElementById("imagesets");
 		li.innerHTML = "<div class='block' style ='height: 60px; padding-top:50px'>+ Drag Images Here</div><div class='upload'>Upload</div>";
-		ul.insertBefore(li, prev_li);
-		prev_li = li;
+		ul.appendChild(li);
 
 		setCounter++;
 		var set_li = document.createElement('li');

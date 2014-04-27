@@ -101,7 +101,4 @@ $(document).ready(function() {
 			downsizeImage();
 		}
 	})
-
-	$(".slice").hover( function() {
-	});
 });

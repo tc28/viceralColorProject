@@ -6,13 +6,12 @@
 	top:120px;
 	left: 200px;
 	width: 1000px;
-	z-index:-1;
 }
 
 #mobile_app_background{
 	position: absolute;
 	left: 320px;
-	z-index: 2;
+	z-index: 1;
 	top: -10px;
 }
 
@@ -187,4 +186,22 @@
 	height: 500px; 
 	position: relative; 
 	border-radius: 500px;
+}
+
+#container1{
+	-ms-transform:rotate(0);
+	-webkit-transform:rotate(0);
+	transform: rotate(0);
+}
+
+#container3{
+	-ms-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+	transform: rotate(90deg);
+}
+
+#container4{
+	-ms-transform:rotate(135deg);
+	-webkit-transform:rotate(135deg);
+	transform: rotate(135deg);
 }
