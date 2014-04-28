@@ -1,4 +1,45 @@
+function sendFile(files, obj, setNum) {
+	console.log(setNum);
+	for (var i=0; i < files.length; i++) {
+		var fd = new FormData();
+		fd.append('file', files[i]);
+		//progress bar stuff
+		var status = "";
+		uploadFile(fd, status);
+	}
+}
 
+function uploadFile(formData, status) {
+	var url = "http://localhost:8080/upload";
+	var req = $.ajax({
+		xhr: function() {
+			var xhrobj = $.ajaxSettings.xhr();
+			if (xhrobj.upload) {
+				xhrobj.upload.addEventListener("progress", function (e) {
+					var percent = 0;
+					var position = event.loaded || event.position;
+					var total = event.total;
+					if (event.lengthComputable) {
+						percent = Math.ceil(position / total*100);
+					}
+				//	status.setProgress(percent);
+				}, false);
+			}
+			return xhrobj;
+		},
+		url: url,
+		type: "POST",
+		contentType: false,
+		processData: false,
+		cache: false,
+		data: formData,
+		success: function (data) {
+			status.setProgress(100);
+		}
+	});
+	
+//	status.setAbort(req);
+}
 $(document).ready(function() {
 
 	var prev_li = document.getElementById("first");
@@ -12,7 +53,7 @@ $(document).ready(function() {
 	$("#add").click( function() {
 		var li = document.createElement('li');
 		var ul = document.getElementById("imagesets");
-		li.innerHTML = "<div class='block' style ='height: 60px; padding-top:50px'>+ Drag Images Here</div><div class='upload'>Upload</div>";
+		li.innerHTML = "<div class='block' style ='height: 60px; padding-top:50px;'>+ Drag Images Here</div><div class='upload'>Upload</div>";
 		ul.insertBefore(li, prev_li);
 		prev_li = li;
 
@@ -22,6 +63,7 @@ $(document).ready(function() {
 		set_li.innerHTML = setCounter;
 		$(set_li).attr("id",setCounter);
 		set_ul.appendChild(set_li);
+		addListener();
 	});
 
 	$("#add").mousedown( function() {
@@ -37,4 +79,70 @@ $(document).ready(function() {
 		$(this).css("color","lightgray");
 	});
 
+	$(".upload").hover( function() {
+		$(this).css("color", "white");
+	}, function() {
+		$(this).css("color", "black");
+	});
+
+/*	$(".block").each(function(i, obj) {
+		 /*obj.on('dragenter', function (e) {
+			e.stopPropagation();
+			e.preventDefault();
+			$(this).css('border', '2px solid red');
+		});
+		console.log(obj);
+		/*obj.on('dragover', function (e) {
+			e.stopPropagation();
+			e.preventDefault();
+		});
+		obj.on('drop', function (e) {
+			$(this).css('border', '2px dotted blue');
+			e.preventDefault();
+			var files = e.originalEvent.dataTransfer.files;
+			console.log("got drop");
+		});
+	});*/
+	var obj = $(".block");
+	addListener(); 
+ 	$(document).on('dragenter', function(e) {
+		e.stopPropagation();
+		e.preventDefault();
+	});
+	$(document).on('dragover', function(e) {
+		e.stopPropagation();
+		e.preventDefault();
+		obj.css('border', '2px dotted red');
+	});
+	$(document).on('drop', function(e) {
+		e.stopPropagation();
+		e.preventDefault();
+	});
+
 });
+
+function addListener() {
+	var obj = $(".block");
+	obj.on('dragenter', function (e) {
+			e.stopPropagation();
+			e.preventDefault();
+			$(this).css('border', '2px solid blue');
+			console.log("Drag event");
+		});
+
+	obj.on('dragover', function (e) {
+			e.stopPropagation();
+			e.preventDefault();
+		});
+	
+	obj.on('drop', function (e) {
+			$(this).css('border', '2px dotted red');
+			e.preventDefault();
+			var files = e.originalEvent.dataTransfer.files;
+			console.log("got drop");
+			console.log(files);
+			var setNum = $(this).parent().index() + 1;
+			sendFile(files, obj, setNum);
+		});
+}
+
