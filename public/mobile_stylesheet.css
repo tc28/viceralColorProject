@@ -11,7 +11,7 @@
 #mobile_app_background{
 	position: absolute;
 	left: 320px;
-	z-index: 1;
+	z-index: 2;
 	top: -10px;
 }
 
@@ -56,10 +56,7 @@
 }
 
 #setImages img{
-	height: 60px;
-	max-width: 100px;
-	position: relative;
-	margin-right: 5px;
+	background-color: blue;
 }
 
 #setImages{
@@ -71,6 +68,11 @@
 	padding: 10px;
 	overflow-y: auto;
 }
+
+#setColors{
+	left: 450px;
+}
+
 #navButton #a{
 	top: 8px;
 }

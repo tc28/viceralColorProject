@@ -7,10 +7,10 @@
 }
 #web_app_background{
 	position:relative;
-	top:-140px;
+	top: -374px;
+	left: 354px;
 	display:block;
-	z-index: 1;
-	left:215px;
+	z-index: -1;
 }
 #chosenColors_web{
 	left: 600px;
@@ -22,7 +22,7 @@
 	z-index: -2;
 }
 
-#fake_website_top{
+#inner_web{
 	position:relative;
 	top:53px;
 	width:577px;
@@ -62,7 +62,9 @@
 	text-decoration:none;
 	font-size:14px;
 	color:rgba(109, 157, 184,.50);
+	z-index: 2;
 }
+
 #fake_nav a:hover{
    color:rgb(109, 157, 184);
 }
@@ -88,7 +90,6 @@
 }
 
 #fake_web_body{
-	width:600px;
 	height:300px;
 	position:relative;
 	background-color:rgb(147, 171, 138);
@@ -126,26 +127,15 @@
 	padding:20px;
 	
 }
-#inner_web{
-	overflow-y:scroll;
-}
-
-#setImages img{
-	height: 90px;
-	max-width: 150px;
-	position: relative;
-	margin-right: 5px;
-	
-}
 
 #setImages{
 	background-color: darkgray;
 	display:inline;
 	height: 405px;
 	width: 190px;
-	left:85px;
+	left:228px;
 	position: absolute;
-	top: 30px;
+	top: 305px;
 	padding: 10px;
 	overflow-y: auto;
 	overflow-y:auto;
@@ -153,8 +143,9 @@
 
 #expand{
 	height: 405px;
-	width: 190px;
-	left:-10px;
+	width: 191px;
+	left:228px;
+	top: 305px;
 }
 
 /*Color Wheel */
