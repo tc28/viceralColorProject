@@ -154,22 +154,22 @@ body{
 }
 
 #color1{
-	background-color: #6d9db8;
+	background-color: black;
 	left: 150px;
 }
 
 #color2{
-	background-color: #93ab8a;
+	background-color: #c56036;
 	left: 100px;
 }
 
 #color3{
-	background-color: #c56036;
+	background-color: #93ab8a;
 	left: 50px;
 }
 
 #color4{
-	background-color: black;
+	background-color: #6d9db8;
 }
 
 

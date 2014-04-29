@@ -63,6 +63,14 @@ function mobileUpsizeImage(){
 	$("#setImages .active").css("width","305px");
 }
 
+function rgb2hex(rgb) {
+    rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    function hex(x) {
+        return ("0" + parseInt(x).toString(16)).slice(-2);
+    }
+    return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+}
+
 $(document).ready(function() {
 
 	$("#drop_down_img").slideDown("slow",function(){
@@ -121,5 +129,61 @@ $(document).ready(function() {
 			downsizeImage();
 		}
 	})
-
+	
+	$("#color4").hover(function() {
+		var color = $("#color4").css("backgroundColor");
+		var colorhex = rgb2hex(color);
+		$("#color_id1").append("<div id='colors'></div>"); 
+		$("#color_id1_rgb").append("<div id='colors_rgb'></div>"); 
+		colors.innerHTML += colorhex;
+		colors_rgb.innerHTML += color;
+		$("#colors").css("color",color);
+		$("#colors_rgb").css("color",color);
+		},
+		function(){
+	 	 	colors.remove();
+			colors_rgb.remove();
+	});
+		$("#color3").hover(function() {
+		var color = $("#color3").css("backgroundColor");
+		var colorhex = rgb2hex(color);
+		$("#color_id2").append("<div id='colors'></div>"); 
+		$("#color_id2_rgb").append("<div id='colors_rgb'></div>"); 
+		colors.innerHTML += colorhex;
+		colors_rgb.innerHTML += color;
+		$("#colors").css("color",color);
+		$("#colors_rgb").css("color",color);
+		},
+		function(){
+	 	 	colors.remove();
+			colors_rgb.remove();
+	});
+	$("#color2").hover(function() {
+		var color = $("#color2").css("backgroundColor");
+		var colorhex = rgb2hex(color);
+		$("#color_id3").append("<div id='colors'></div>"); 
+		$("#color_id3_rgb").append("<div id='colors_rgb'></div>"); 
+		colors.innerHTML += colorhex;
+		colors_rgb.innerHTML += color;
+		$("#colors").css("color",color);
+		$("#colors_rgb").css("color",color);
+		},
+		function(){
+	 	 	colors.remove();
+			colors_rgb.remove();
+	});
+	$("#color1").hover(function() {
+		var color = $("#color1").css("backgroundColor");
+		var colorhex = rgb2hex(color);
+		$("#color_id4").append("<div id='colors'></div>"); 
+		$("#color_id4_rgb").append("<div id='colors_rgb'></div>"); 
+		colors.innerHTML += colorhex;
+		colors_rgb.innerHTML += color;
+		$("#colors").css("color",color);
+		$("#colors_rgb").css("color",color);
+		},
+		function(){
+	 	 	colors.remove();
+			colors_rgb.remove();
+	});
 });
