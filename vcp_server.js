@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 var fs = require('fs');
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
 var ids = {};
 app.use(express.bodyParser({
 	keepExtensions:true,
@@ -29,10 +31,19 @@ app.get('/', function(request, response) {
 //I was wondering which methods that I should interact with the client
 app.get('/imageselection.html', function(request, response) {
 	//this is the function that is called when the user calls imageselections.html
+	request.on('close', function() {
+		console.log("closed");
+	});
+	request.on('end', function() {
+		console.log("ended");
+	});
 	response.render('imageselection.html', '');
 });
 
 app.get('/mobile.html', function(request, response) {
+	request.on('close', function() {
+		console.log("closed");
+	});
 	response.render('mobile.html', '');
 });
 
@@ -87,5 +98,5 @@ function generateImageID() {
 
 
 
-app.listen(8080);
+server.listen(8080);
 console.log('server running on 8080');
