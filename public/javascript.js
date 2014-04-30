@@ -1,5 +1,4 @@
 
-$(document).ready(function() {
 var set1 = ["/public/images/6.png","/public/images/7.png", "/public/images/8.png"];
 var set1_colors = [[0,0,0],[197,96,54],[147, 171, 138],[109,157,184]];
 var set2 = ["/public/images/1.png","/public/images/2.png", "/public/images/3.png", "/public/images/4.png", "/public/images/5.png"];
@@ -80,21 +79,8 @@ $(document).ready(function() {
 		$("#setColors").fadeIn("slow");
 	});
 
-	$("#add").click( function() {
-		var li = document.createElement('li');
-		var ul = document.getElementById("imagesets");
-		li.innerHTML = "<div class='block' style ='height: 60px; padding-top:50px;'>+ Drag Images Here</div><div class='upload'>Upload</div>";
-		ul.insertBefore(li, prev_li);
-		prev_li = li;
-
-		setCounter++;
-		var set_li = document.createElement('li');
-		var set_ul = document.getElementById("list_numbers");
-		set_li.innerHTML = setCounter;
-		$(set_li).attr("id",setCounter);
-		set_ul.appendChild(set_li);
-		addListener();
 	createSets();
+
 
 	$(".color").draggable( {
         revert : function(event, ui) {
@@ -118,7 +104,7 @@ $(document).ready(function() {
 			$("#setImages #set"+set_i).css("display","block");
 			changeColors(set_i)
 		}
-	})
+	});
 
 	$("#setImages img").click( function() {
 
@@ -144,7 +130,7 @@ $(document).ready(function() {
 		if (!$(this).hasClass("active")){
 			downsizeImage();
 		}
-	})
+	});
 	
 	$("#color4").hover(function() {
 		var color = $("#color4").css("backgroundColor");
@@ -197,9 +183,10 @@ $(document).ready(function() {
 		colors_rgb.innerHTML += color;
 		$("#colors").css("color",color);
 		$("#colors_rgb").css("color",color);
-		},
+	},
 		function(){
-	 	 	colors.remove();
+	 		colors.remove();
 			colors_rgb.remove();
 	});
+
 });

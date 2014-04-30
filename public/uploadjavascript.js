@@ -34,7 +34,8 @@ function uploadFile(formData, status) {
 		cache: false,
 		data: formData,
 		success: function (data) {
-			status.setProgress(100);
+			//status.setProgress(100);
+			console.log("uploaded!");
 		}
 	});
 	
@@ -145,4 +146,3 @@ function addListener() {
 }
 
 
-});

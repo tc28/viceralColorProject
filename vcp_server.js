@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 var fs = require('fs');
-var server = http.createServer(app);
-var io = require('socket.io').listen(server);
+//var server = http.createServer(app);
+//var io = require('socket.io').listen(server);
 var ids = {};
 app.use(express.bodyParser({
 	keepExtensions:true,
@@ -62,6 +62,7 @@ app.post('/upload', function(req, res) {
 	var result = "";
 
 	if ((extensions[extension]) && ((req.files.file.size /1024) < maxFileSize)) {
+		console.log("moving out of the folder");
 		fs.rename(tmpPath, newPath, function (err) {
 			if (err) 
 				throw err;
@@ -98,5 +99,5 @@ function generateImageID() {
 
 
 
-server.listen(8080);
+app.listen(8080);
 console.log('server running on 8080');
