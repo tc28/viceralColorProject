@@ -10,14 +10,14 @@
 
 #mobile_app_background{
 	position: absolute;
-	left: 320px;
+	left: 370px;
 	z-index: 2;
 	top: -10px;
 }
 
 #innerPhone{
 	position: absolute;
-	left: 350px;
+	left: 400px;
 	width: 228px;
 	height: 400px;
 	top: 95px;
@@ -66,6 +66,7 @@
 	position: absolute;
 	top: 30px;
 	padding: 10px;
+	left:50px;
 	overflow-y: auto;
 }
 
@@ -184,7 +185,7 @@
 	margin: auto;
 	top: 30px;
 	left: 80px;
-	width: 500px; 
+	width: 800px; /* 500 */
 	height: 500px; 
 	position: relative; 
 	border-radius: 500px;
@@ -286,4 +287,69 @@
 	top:-28px;
 	text-align:center;
 	left:120px;
+}
+#boxes{
+	position:relative;
+	top:10px;
+	left:-50px;
+}
+#box_background1{
+	width:100px;
+	height:110px;
+	position:relative;
+	background-color:rgb(147, 171, 138);
+	color:rgba(255,255,255,.5);
+	font-family: Helvetica, sans-serif;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+	left:540px;
+	top:16px;
+}
+#box_background2{
+	width:100px;
+	height:80px;
+	position:relative;
+	background-color:rgb(109, 157, 184);
+	color:rgba(255,255,255,.5);
+	font-family: Helvetica, sans-serif;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+	left:440px;
+	top:140px;
+}
+#box_text{
+	width:100px;
+	height:80px;
+	position:relative;
+	background-color:rgb(197, 96, 54);
+	color:rgba(255,255,255,.5);
+	font-family: Helvetica, sans-serif;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+	left:340px;
+	top:264px;
+}
+#box_accent{
+	width:100px;
+	height:80px;
+	position:relative;
+	background-color:rgb(0,0,0);
+	color:rgba(255,255,255,.5);
+	font-family: Helvetica, sans-serif;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+	left:240px;
+	top:384px;
+}
+#colorline2{
+	height: 510px;
+	width: 4px;
+	left: 587px;
+	position: absolute;
+	background-color: gray;
+	top:0px;
 }

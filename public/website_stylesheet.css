@@ -2,13 +2,13 @@
 
 #web_prototype{
 	position:relative;
-	top:-234px;
-	left: 140px;
+	top:-354px;
+	left: 100px;
 }
 #web_app_background{
 	position:relative;
-	top: -374px;
-	left: 354px;
+	top: -494px;
+	left: 314px;
 	display:block;
 	z-index: -1;
 }
@@ -69,7 +69,7 @@
 	font-family:Verdana, Geneva, sans-serif;
 	text-decoration:none;
 	font-size:14px;
-	color:rgba(197, 96, 54,.50);
+	color:rgba(197, 96, 54,.70);
 	z-index: 2;
 }
 
@@ -141,9 +141,9 @@
 	display:inline;
 	height: 405px;
 	width: 190px;
-	left:228px;
+	left:188px;
 	position: absolute;
-	top: 305px;
+	top: 185px;
 	padding: 10px;
 	overflow-y: auto;
 	overflow-y:auto;
@@ -298,7 +298,8 @@
 	top:-28px;
 	text-align:center;
 	left:120px;
-}
+} 
+/*
 #boxes{
 	position:relative;
 	top:10px;
@@ -363,4 +364,71 @@
 	position: absolute;
 	background-color: gray;
 	top:85px;
+}
+*/
+
+#boxes{
+	position:relative;
+	top:30px;
+	left:-80px;
+}
+#box_background1{
+	width:100px;
+	height:110px;
+	position:relative;
+	background-color:rgb(147, 171, 138);
+	color:rgba(255,255,255,.5);
+	font-family: Helvetica, sans-serif;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+	left:540px;
+	top:16px;
+}
+#box_background2{
+	width:100px;
+	height:80px;
+	position:relative;
+	background-color:rgb(109, 157, 184);
+	color:rgba(255,255,255,.5);
+	font-family: Helvetica, sans-serif;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+	left:440px;
+	top:140px;
+}
+#box_text{
+	width:100px;
+	height:80px;
+	position:relative;
+	background-color:rgb(197, 96, 54);
+	color:rgba(255,255,255,.5);
+	font-family: Helvetica, sans-serif;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+	left:340px;
+	top:264px;
+}
+#box_accent{
+	width:100px;
+	height:80px;
+	position:relative;
+	background-color:rgb(0,0,0);
+	color:rgba(255,255,255,.5);
+	font-family: Helvetica, sans-serif;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+	left:240px;
+	top:384px;
+}
+#colorline2{
+	height: 510px;
+	width: 4px;
+	left: 587px;
+	position: absolute;
+	background-color: gray;
+	top:0px;
 }

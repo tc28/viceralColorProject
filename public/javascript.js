@@ -188,5 +188,6 @@ $(document).ready(function() {
 	 		colors.remove();
 			colors_rgb.remove();
 	});
-
+	
+	
 });
