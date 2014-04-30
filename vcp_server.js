@@ -89,7 +89,7 @@ function generateImageID() {
 		result += chars.charAt(Math.floor(Math.random()*chars.length));
 	}
 	if (ids[result]) {
-		generateRoomIdentifier();
+		generateImageID();
 	} else {
 		ids[result] = true;
 		return result;

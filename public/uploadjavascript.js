@@ -55,6 +55,7 @@ $(document).ready(function() {
 		var li = document.createElement('li');
 		var ul = document.getElementById("imagesets");
 		li.innerHTML = "<div class='block' style ='height: 60px; padding-top:50px'>+ Drag Images Here</div><div class='upload'>Upload</div>";
+		addDragListener($(li.firstChild));
 		ul.appendChild(li);
 
 		setCounter++;
@@ -103,7 +104,7 @@ $(document).ready(function() {
 		});
 	});*/
 	var obj = $(".block");
-	addListener(); 
+	addDragListener(obj); 
  	$(document).on('dragenter', function(e) {
 		e.stopPropagation();
 		e.preventDefault();
@@ -111,7 +112,6 @@ $(document).ready(function() {
 	$(document).on('dragover', function(e) {
 		e.stopPropagation();
 		e.preventDefault();
-		obj.css('border', '2px dotted red');
 	});
 	$(document).on('drop', function(e) {
 		e.stopPropagation();
@@ -120,28 +120,26 @@ $(document).ready(function() {
 
 });
 
-function addListener() {
-	var obj = $(".block");
-	obj.on('dragenter', function (e) {
+function addDragListener(element) {
+	console.log(element);
+	element.on('dragenter', function (e) {
 			e.stopPropagation();
 			e.preventDefault();
-			$(this).css('border', '2px solid blue');
 			console.log("Drag event");
-		});
+	});
 
-	obj.on('dragover', function (e) {
+	element.on('dragover', function (e) {
 			e.stopPropagation();
 			e.preventDefault();
-		});
+	});
 	
-	obj.on('drop', function (e) {
-			$(this).css('border', '2px dotted red');
+	element.on('drop', function (e) {
 			e.preventDefault();
 			var files = e.originalEvent.dataTransfer.files;
 			console.log("got drop");
 			console.log(files);
 			var setNum = $(this).parent().index() + 1;
-			sendFile(files, obj, setNum);
+			sendFile(files, element, setNum);
 		});
 }
 
