@@ -1,4 +1,5 @@
 /*Upload Code */
+
 #wrapper{
 	position: relative;
 	width: 800px;
@@ -68,7 +69,7 @@
 	white-space:nowrap;
 	text-transform: uppercase;
 	font-family: helvetica, sans-serif;
-	z-index: 2;
+	z-index: 1;
 }
 
 #blockImages li{

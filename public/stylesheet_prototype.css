@@ -3,6 +3,7 @@
 
 body{
 	background-color:rgb(227,225,225);
+	height: 500px;
 }
 
 #nav{
@@ -12,6 +13,7 @@ body{
 	height:55px;
 	width:100%;
 	background-color:rgb(197,96,54);
+	z-index: 3;
 }
 
 #main_nav li{
@@ -49,6 +51,7 @@ body{
 	position: fixed;
 	top:55px;
 	width: 100%;
+	z-index: 3;
 }
 
 #drop_down_img{
@@ -59,7 +62,6 @@ body{
 }
 #logo{
 	position:absolute;
-	z-index:1;
 	top:8px;
 	left:20px;
 }
@@ -97,6 +99,7 @@ body{
 	position:fixed;
 	z-index: 3;
 }
+
 #set_numbers li{
 	list-style:none;
 	left:-30px;
@@ -118,26 +121,26 @@ body{
 	color:#666;
 }
 
-#web_app_background{
-	position:relative;
-	top:120px;
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
-
-}
-
 /*Website and Mobile shared code*/
+
+#setImages img{
+	max-height: 90px;
+	width: 150px;
+	position: relative;
+	margin-right: 5px;
+}
 
 #setColors{
 	display: none;
 	margin: auto;
+	left: 425px;
+	position: relative;
 }
 
 #colorline{
 	height: 2px;
 	width: 210px;
-	left: 415px;
+	left: -10px;
 	position: absolute;
 	background-color: gray;
 	top: 25px;
@@ -148,27 +151,25 @@ body{
 	width: 40px;
 	position: absolute;
 	top: 15px;
-	z-index: 4;
 }
 
 #color1{
-	background-color: #6d9db8;
-	left: 575px;
+	background-color: black;
+	left: 150px;
 }
 
 #color2{
-	background-color: #93ab8a;
-	left: 525px;
+	background-color: #c56036;
+	left: 100px;
 }
 
 #color3{
-	background-color: #c56036;
-	left: 475px;
+	background-color: #93ab8a;
+	left: 50px;
 }
 
 #color4{
-	background-color: black;
-	left: 425px;
+	background-color: #6d9db8;
 }
 
 
@@ -198,9 +199,6 @@ body{
 
 #container1{
 	clip: rect(0px, 500px, 500px, 250px);
-	-ms-transform:rotate(0);
-	-webkit-transform:rotate(0);
-	transform: rotate(0);
 }
 
 #container2{
@@ -209,16 +207,10 @@ body{
 
 #container3{
 	clip: rect(0px, 500px, 500px, 250px); 
-	-ms-transform:rotate(90deg);
-	-webkit-transform:rotate(90deg);
-	transform: rotate(90deg);
 }
 
 #container4{
 	clip: rect(0px, 500px, 500px, 250px); 
-	-ms-transform:rotate(135deg);
-	-webkit-transform:rotate(135deg);
-	transform: rotate(135deg);
 }
 
 #slice1{
