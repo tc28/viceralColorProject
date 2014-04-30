@@ -11,7 +11,16 @@
 	overflow-y: auto;
 }
 
-#add{
+#buttons{
+	display: inline-block;
+	position: relative;
+	width: 250px;
+	height: 20px;
+	margin: 10px auto 10px auto;
+
+}
+
+#add, #done{
 	border: 1px solid lightgray;
 	width: 100px;
 	height: 20px;
@@ -19,9 +28,17 @@
 	font-family: helvetica, sans-serif;
 	text-align: center;
 	padding-top: 5px;
-	margin: 0 auto 10px auto;
 	color: lightgray;
+}
 
+#add:hover, #done:hover{
+	color: white;
+}
+
+#done{
+	position: absolute;
+	left: 140px;
+	top: 0;
 }
 
 #wrapper a{
@@ -29,7 +46,6 @@
 	color: black;
 	outline: none;
 }
-
 
 #wrapper ul{
 	list-style-type: none;

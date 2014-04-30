@@ -50,6 +50,10 @@ function downsizeImage(){
 	$("#setImages .active").css("max-height","90px");
 	$("#setImages .active").css("width","150px");
 	$("#setImages .active").css("z-index","0");
+	if ($("#setImages .active").hasClass("web")){
+		$("#setImages .active").removeClass("web");
+		$("#setImages .active").css("margin-left", "25px");
+	}
 	$("#setImages .active").removeClass("active");
 	$("#expand").css("display","none");
 }
@@ -57,11 +61,51 @@ function downsizeImage(){
 function webUpsizeImage(){
 	$("#setImages .active").css("max-height","190px");
 	$("#setImages .active").css("width","190px");
+	$("#setImages .active").css("margin-left","0px");
+	$("#setImages .active").addClass("web");
 }
 
 function mobileUpsizeImage(){
 	$("#setImages .active").css("max-height","305px");
 	$("#setImages .active").css("width","305px");
+}
+
+function mobileShrink(){
+	$("#setImages").animate({
+			left: "355px",
+			"padding-right": "10px",
+			width: "0px"
+		}, "slow", function() {
+			$("#triangle-left").fadeIn("slow");
+	});
+}
+
+function mobileExpand(){
+	$("#setImages").animate({
+			left: "30px",
+			"padding-right": "20px",
+			width: "315px"
+		}, "slow", function() {
+			$("#triangle-right").fadeIn("slow");
+	});
+}
+
+function webShrink(){
+	$("#setImages").animate({
+			left: "378px",
+			width: "0px"
+		}, "slow", function() {
+			$("#triangle-left").fadeIn("slow");
+	});
+}
+
+function webExpand(){
+	$("#setImages").animate({
+			left: "188px",
+			width: "190px"
+		}, "slow", function() {
+			$("#triangle-right").fadeIn("slow");
+	});
 }
 
 function rgb2hex(rgb) {
@@ -187,6 +231,28 @@ $(document).ready(function() {
 		function(){
 	 		colors.remove();
 			colors_rgb.remove();
+	});
+
+	$("#triangle-right").click(function(){
+		$(this).css("display","none");
+		$("#setImages img").css("display","none");
+		if ($(this).css("left")=="35px"){
+			mobileShrink();
+		}
+		else{
+			webShrink();
+		}
+	});
+
+	$("#triangle-left").click(function(){
+		$(this).css("display","none");
+		$("#setImages img").css("display","inline");
+		if ($(this).css("left")=="360px"){
+			mobileExpand();
+		}
+		else{
+			webExpand();
+		}
 	});
 	
 	

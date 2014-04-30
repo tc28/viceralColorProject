@@ -1,9 +1,20 @@
+function addToSet(filepath, setNum){
+	var ul = $("#imagesets #"+setNum+" ul");
+	console.log(ul);
+	ul.append("<li><img src="+filepath+"></img></li>");
+}
+
+
 function sendFile(files, obj, setNum) {
 	console.log(setNum);
 	for (var i=0; i < files.length; i++) {
 		var fd = new FormData();
 		fd.append('file', files[i]);
-		//progress bar stuff
+		console.log(files[i]);
+		//NEED TO FIND OUT HOW TO GET ELEMENT NAME HERE
+		var imgname = "47GIVV9RJ1EGMD6ZIMCIFKYJB.png";
+		var filepath = "/public/images/tmp/"+imgname;
+		addToSet(filepath, setNum);
 		var status = "";
 		uploadFile(fd, status);
 	}
@@ -63,6 +74,7 @@ $(document).ready(function() {
 		var set_ul = document.getElementById("list_numbers");
 		set_li.innerHTML = setCounter;
 		$(set_li).attr("id",setCounter);
+		$(li).attr("id",setCounter);
 		set_ul.appendChild(set_li);
 	});
 
@@ -73,16 +85,14 @@ $(document).ready(function() {
 		$(this).css("css","white");
 	});
 
-	$("#add").hover( function() {
-		$(this).css("color","white");
-	}, function() {
-		$(this).css("color","lightgray");
-	});
-
-		$(".upload").hover( function() {
+	$(".upload").hover( function() {
 		$(this).css("color", "white");
 	}, function() {
 		$(this).css("color", "black");
+	});
+
+	$("#done").mousedown( function() {
+		$(this).css("color","black");
 	});
 
 /*	$(".block").each(function(i, obj) {
