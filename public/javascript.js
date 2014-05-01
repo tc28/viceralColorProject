@@ -122,7 +122,7 @@ $(document).ready(function() {
 
 	var drag_color = $("#color2").css("backgroundColor");
 	var drag_box = $("#color2");
-
+	var box = $("#box_text");
 	
 	$("#drop_down_img").slideDown("slow",function(){
 		$("#drop_down_text").fadeIn("slow");
@@ -133,15 +133,88 @@ $(document).ready(function() {
 
 
 	$(".color").draggable( {			  
-	  revert : "valid", 
+	  revert : true, 
 	  	drag : function(event, ui) {
 	  		drag_color = $(this).css("backgroundColor");
 	  		drag_box = $(this);
 	  	}
 	});
 	$(".box").droppable({
+		
 		drop:function(event,ui){
-			$(this).css("backgroundColor",drag_color);	
+			$(this).css("backgroundColor",drag_color);
+		<!-- web
+			<!-- background1
+			$("#fake_web_body").css("backgroundColor",$("#box_background1").css("backgroundColor"));
+			$("#B_web").css("color",$("#box_background1").css("backgroundColor"));
+			<!-- text
+			$("#fake_web_text").css("color",$("#box_text").css("backgroundColor"));
+			$("#username_web").css("color",$("#box_text").css("backgroundColor"));
+			$("#inner_box").css("color",$("#box_text").css("backgroundColor"));
+			$("#web_top").css("color",$("#box_text").css("backgroundColor"));
+			$("#fake_nav a").css("color",$("#box_text").css("backgroundColor"));
+			<!--outlines
+
+			<!-- accent
+			$("#fake_nav").css("backgroundColor",$("#box_accent").css("backgroundColor"));
+			$("#B_web").css({"border-color":$("#box_accent").css("backgroundColor"),
+							"border-weight":"2px",
+							"border-style":"solid",
+							"border-radius":"10px"});
+			$("#inner_box").css({"border-color":$("#box_accent").css("backgroundColor"),
+							"border-weight":"2px",
+							"border-style":"solid",
+							"border-radius":"10px"});
+			<!-- background2
+			$("#inner_web").css("backgroundColor",$("#box_background2").css("backgroundColor"));
+			$("#B_web").css("backgroundColor",$("#box_background2").css("backgroundColor"));
+			$("#inner_box").css("backgroundColor",$("#box_background2").css("backgroundColor"));
+			
+		<!-- Mobile
+			<!-- background1
+			$("#innerPhone").css("backgroundColor",$("#box_background1").css("backgroundColor"));
+			$("#B").css("color",$("#box_background1").css("backgroundColor"));
+			<!-- text
+			$("#phoneText").css("color",$("#box_text").css("backgroundColor"));	
+			$(".username").css("color",$("#box_text").css("backgroundColor"));
+			$(".comment").css("color",$("#box_text").css("backgroundColor"));
+			$(".points").css("color",$("#box_text").css("backgroundColor"));
+			<!-- accent
+			$("#top").css("color",$("#box_accent").css("backgroundColor"));
+			$("#navButton").css({"border-color":$("#box_accent").css("backgroundColor"),
+							"border-weight":"2px",
+							"border-style":"solid",
+							"border-radius":"10px"});
+			$("#a").css("backgroundColor",$("#box_accent").css("backgroundColor"));
+			$("#b").css("backgroundColor",$("#box_accent").css("backgroundColor"));
+			$("#c").css("backgroundColor",$("#box_accent").css("backgroundColor"));
+			$("#B").css({"border-color":$("#box_accent").css("backgroundColor"),
+							"border-weight":"2px",
+							"border-style":"solid",
+							"border-radius":"10px"});
+			$("#commentBlocks #a").css({"border-color":$("#box_accent").css("backgroundColor"),
+							"border-weight":"1px",
+							"border-style":"solid"
+							});
+			$("#commentBlocks #b").css({"border-color":$("#box_accent").css("backgroundColor"),
+							"border-weight":"1px",
+							"border-style":"solid"
+							});
+			$("#commentBlocks #c").css({"border-color":$("#box_accent").css("backgroundColor"),
+							"border-weight":"1px",
+							"border-style":"solid"
+							});
+			$("#commentBlocks #d").css({"border-color":$("#box_accent").css("backgroundColor"),
+							"border-weight":"1px",
+							"border-style":"solid"
+							});
+			$("#commentBlocks #e").css({"border-color":$("#box_accent").css("backgroundColor"),
+							"border-weight":"1px",
+							"border-style":"solid"
+							});
+			<!-- background2
+			$("#top").css("backgroundColor",$("#box_background2").css("backgroundColor"));
+			$("#B").css("backgroundColor",$("#box_background2").css("backgroundColor"));
 			setTimeout(function() {
 				$(drag_box).promise().done();
 			},100);
