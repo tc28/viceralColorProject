@@ -1,7 +1,26 @@
 function addToSet(filepath, setNum){
+	var block = $("#imagesets #"+setNum+" .block");
+	if (block.css("height")=="60px"){
+		block.css("height","120px");
+		block.css("padding-top","0px");
+		$("#imagesets #"+setNum+" span").remove();
+	}
 	var ul = $("#imagesets #"+setNum+" ul");
-	console.log(ul);
-	ul.append("<li><img src="+filepath+"></img></li>");
+	ul.prepend("<li><img src="+filepath+"></img></li>");
+
+	var hover = document.createElement("div");
+	var jhover = $(hover);
+	jhover.attr("class","hover");
+	jhover.css("width","80px");
+	jhover.css("display","none");
+	jhover.html("<div class='delete'></div>");
+
+	console.log(jhover);
+
+	var img = $("#imagesets #"+setNum+" ul li:last-child img");
+	console.log(img);
+	img.after(jhover);
+
 }
 
 
@@ -11,10 +30,14 @@ function sendFile(files, obj, setNum) {
 		var fd = new FormData();
 		fd.append('file', files[i]);
 		console.log(files[i]);
-		//NEED TO FIND OUT HOW TO GET ELEMENT NAME HERE
-		var imgname = "47GIVV9RJ1EGMD6ZIMCIFKYJB.png";
-		var filepath = "/public/images/tmp/"+imgname;
-		addToSet(filepath, setNum);
+
+		var reader = new FileReader(); // instance of the FileReader
+        reader.readAsDataURL(files[i]); // read the local file
+ 
+        reader.onloadend = function(){ 
+                addToSet(this.result, setNum);
+        }
+
 		var status = "";
 		uploadFile(fd, status);
 	}
@@ -65,7 +88,7 @@ $(document).ready(function() {
 	$("#add").click( function() {
 		var li = document.createElement('li');
 		var ul = document.getElementById("imagesets");
-		li.innerHTML = "<div class='block' style ='height: 60px; padding-top:50px'>+ Drag Images Here</div><div class='upload'>Upload</div>";
+		li.innerHTML = "<div class='block'><span>+ Drag Images Here</span><ul id='blockImages'></ul></div><div class='browse'>Browse</div>";
 		addDragListener($(li.firstChild));
 		ul.appendChild(li);
 
@@ -78,21 +101,22 @@ $(document).ready(function() {
 		set_ul.appendChild(set_li);
 	});
 
-	$("#add").mousedown( function() {
-		$(this).css("color","black");
-	});
-	$("#add").mouseup( function() {
-		$(this).css("css","white");
-	});
+	// $(".browse").hover( function() {
+	// 	$(this).css("color", "white");
+	// }, function() {
+	// 	$(this).css("color", "black");
+	// });
 
-	$(".upload").hover( function() {
-		$(this).css("color", "white");
+	$("#blockImages img").hover( function() {
+		$(this).next().css("display","block");
 	}, function() {
-		$(this).css("color", "black");
+		$(this).next().css("display","none");
 	});
 
-	$("#done").mousedown( function() {
-		$(this).css("color","black");
+	$("#blockImages .hover").hover( function() {
+		$(this).css("display","block");
+	}, function() {
+		$(this).css("display","none");
 	});
 
 /*	$(".block").each(function(i, obj) {
