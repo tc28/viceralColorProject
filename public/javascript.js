@@ -118,6 +118,12 @@ function rgb2hex(rgb) {
 
 $(document).ready(function() {
 
+	// JavaScript Document
+
+	var drag_color = $("#color2").css("backgroundColor");
+	var drag_box = $("#color2");
+
+	
 	$("#drop_down_img").slideDown("slow",function(){
 		$("#drop_down_text").fadeIn("slow");
 		$("#setColors").fadeIn("slow");
@@ -126,16 +132,22 @@ $(document).ready(function() {
 	createSets();
 
 
-	$(".color").draggable( {
-        revert : function(event, ui) {
-        	$(this).data("ui-draggable").originalPosition = {
-                top : 15,
-                left : 200 - (50*$(this).attr("id")[5])
-            };
-            return !event;
-		}
+	$(".color").draggable( {			  
+	  revert : "valid", 
+	  	drag : function(event, ui) {
+	  		drag_color = $(this).css("backgroundColor");
+	  		drag_box = $(this);
+	  	}
 	});
-
+	$(".box").droppable({
+		drop:function(event,ui){
+			$(this).css("backgroundColor",drag_color);	
+			setTimeout(function() {
+				$(drag_box).promise().done();
+			},100);
+		} 
+	});
+	
 	$("#set_numbers li").click( function() {
 		if (!$(this).hasClass("active")){
 
