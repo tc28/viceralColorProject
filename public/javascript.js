@@ -215,9 +215,6 @@ $(document).ready(function() {
 			<!-- background2
 			$("#top").css("backgroundColor",$("#box_background2").css("backgroundColor"));
 			$("#B").css("backgroundColor",$("#box_background2").css("backgroundColor"));
-			setTimeout(function() {
-				$(drag_box).promise().done();
-			},100);
 		} 
 	});
 	

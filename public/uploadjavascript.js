@@ -11,15 +11,32 @@ function addToSet(filepath, setNum){
 	var hover = document.createElement("div");
 	var jhover = $(hover);
 	jhover.attr("class","hover");
-	jhover.css("width","80px");
-	jhover.css("display","none");
-	jhover.html("<div class='delete'></div>");
+	// jhover.css("display","none");
+	jhover.html("<div class='delete'>X</div>");
 
-	console.log(jhover);
+	var img = $("#imagesets #"+setNum+" ul li:first-child img");
 
-	var img = $("#imagesets #"+setNum+" ul li:last-child img");
-	console.log(img);
+	var width = img.css("width");
+	jhover.css("width",width);
+
 	img.after(jhover);
+
+	img.hover( function() {
+		$(this).next().css("display","block");
+	}, function() {
+		$(this).next().css("display","none");
+	});
+
+	jhover.hover( function() {
+		$(this).css("display","block");
+	}, function() {
+		$(this).css("display","none");
+	});
+
+	var del = jhover.children();
+	del.click ( function() {
+		img.parent().remove();
+	});
 
 }
 
