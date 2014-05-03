@@ -1,7 +1,12 @@
 var express = require('express');
 var app = express();
-
-app.use(express.bodyParser());
+var fs = require('fs');
+//var server = http.createServer(app);
+//var io = require('socket.io').listen(server);
+var ids = {};
+app.use(express.bodyParser({
+	keepExtensions:true,
+	uploadDir: __dirname +'/tmp'}));
 app.use(express.methodOverride());
 
 var anyDB = require('any-db');
@@ -26,15 +31,73 @@ app.get('/', function(request, response) {
 //I was wondering which methods that I should interact with the client
 app.get('/imageselection.html', function(request, response) {
 	//this is the function that is called when the user calls imageselections.html
+	request.on('close', function() {
+		console.log("closed");
+	});
+	request.on('end', function() {
+		console.log("ended");
+	});
 	response.render('imageselection.html', '');
 });
 
 app.get('/mobile.html', function(request, response) {
+	request.on('close', function() {
+		console.log("closed");
+	});
 	response.render('mobile.html', '');
 });
 
+app.post('/upload', function(req, res) {
+	var obj = {};
+	console.log("request" + req);
+	var extensions={".png":true, ".jpg":true, ".gif":true};
+	var maxFileSize = 500000;
+	var fileName = req.files.file.name;
+	var fileID = generateImageID();
+	var tmpPath = req.files.file.path;
+	var i = fileName.lastIndexOf('.');
+	var extension = (i < 0) ? '' : fileName.substr(i);
+
+	var newPath = __dirname +'/public/images/tmp/' + fileID + extension;
+	var result = "";
+
+	if ((extensions[extension]) && ((req.files.file.size /1024) < maxFileSize)) {
+		console.log("moving out of the folder");
+		fs.rename(tmpPath, newPath, function (err) {
+			if (err) 
+				throw err;
+			fs.unlink(tmpPath, function() {
+				if (err)
+					throw err;
+			});
+		});
+		result = "File upload succeeded";
+	} else {
+		fs.unlink(tmpPath, function(err) {
+			if (err) throw err;
+		});
+		console.log("problemmmmm");
+		result = "File upload failed";
+	}
+	res.end(result);
+});
+
+function generateImageID() {
+	var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+	var result = '';
+	for (var i = 0; i < 25; i++) {
+		result += chars.charAt(Math.floor(Math.random()*chars.length));
+	}
+	if (ids[result]) {
+		generateImageID();
+	} else {
+		ids[result] = true;
+		return result;
+	}
+}
 
 
 
-app.listen(8000);
-console.log('server running on 8000');
+
+app.listen(8080);
+console.log('server running on 8080');
