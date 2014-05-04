@@ -1,8 +1,16 @@
+
+var http = require('http'); //this is new
+
 var express = require('express');
 var app = express();
 var fs = require('fs');
-//var server = http.createServer(app);
-//var io = require('socket.io').listen(server);
+
+//adding io 
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
+
+
+
 var ids = {};
 app.use(express.bodyParser({
 	keepExtensions:true,
@@ -11,6 +19,9 @@ app.use(express.methodOverride());
 
 var anyDB = require('any-db');
 var conn = anyDB.createConnection('sqlite3://vcp.db');
+
+
+
 
 //rendering html 
 var engines = require('consolidate');
@@ -46,6 +57,17 @@ app.get('/mobile.html', function(request, response) {
 	});
 	response.render('mobile.html', '');
 });
+
+
+io.sockets.on('connection', function(socket) {
+	console.log('in server: connected');
+	socket.on('upload', function(fd, status) {
+	
+		console.log('in server: upload');
+	
+	});
+});
+
 
 app.post('/upload', function(req, res) {
 	var obj = {};
