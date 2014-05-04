@@ -60,11 +60,7 @@ app.get('/mobile.html', function(request, response) {
 io.sockets.on('connection', function(socket) {
 	console.log('in server: connected');
 	socket.on('upload', function(fd, status) {
-	
-		console.log('in server: upload');
-		console.log('in server: status: ' + status);
-		
-		console.log(fd);
+
 	});
 });
 
