@@ -56,14 +56,15 @@ function sendFile(files, obj, setNum) {
                		addToSet(this.result, setNum);
         	}
 
-		var status = "";
+		var status = "test status";
+		//console.log(files[i].size);
 		
 		
 		//upload a single file
-		console.log('emitting');
+		console.log('emitting upload');
 		socket.emit('upload', fd, status);
 		//problems with the progress bar
-		uploadFile(fd, status);
+		//uploadFile(fd, status);
 	}
 }
 
@@ -97,7 +98,6 @@ function uploadFile(formData, status) {
 		}
 	});
 	
-//	status.setAbort(req);
 }
 
 $(document).ready(function() {

@@ -62,7 +62,9 @@ io.sockets.on('connection', function(socket) {
 	socket.on('upload', function(fd, status) {
 	
 		console.log('in server: upload');
-	
+		console.log('in server: status: ' + status);
+		
+		console.log(fd);
 	});
 });
 
